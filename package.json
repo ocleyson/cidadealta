@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.0.0-alpha.7"
+    "@faker-js/faker": "^6.0.0-alpha.7",
+    "@types/styled-components": "^5.1.24"
   }
 }
