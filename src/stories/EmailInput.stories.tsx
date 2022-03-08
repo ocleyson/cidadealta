@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import EmailInput from '../components/EmailInput';
+import EmailInputComponent from '../components/EmailInput';
 
 export default {
     title: 'Components/Email Input',
-    component: EmailInput,
-} as ComponentMeta<typeof EmailInput>;
+    component: EmailInputComponent,
+} as ComponentMeta<typeof EmailInputComponent>;
 
-const Template: ComponentStory<typeof EmailInput> = (args) => <EmailInput {...args} />;
+const Template: ComponentStory<typeof EmailInputComponent> = (args) => <EmailInputComponent {...args} />;
 
-export const ErrorMessage = Template.bind({});
-ErrorMessage.storyName = 'Email Input';
+export const EmailInput = Template.bind({});
+EmailInput.storyName = 'Email Input';

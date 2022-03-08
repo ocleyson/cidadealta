@@ -1,17 +1,17 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import SubmitButton from '../components/SubmitButton';
+import SubmitButtonComponent from '../components/SubmitButton';
 
 export default {
     title: 'Components/Submit Button',
-    component: SubmitButton,
-} as ComponentMeta<typeof SubmitButton>;
+    component: SubmitButtonComponent,
+} as ComponentMeta<typeof SubmitButtonComponent>;
 
-const Template: ComponentStory<typeof SubmitButton> = (args) => <SubmitButton {...args} />;
+const Template: ComponentStory<typeof SubmitButtonComponent> = (args) => <SubmitButtonComponent {...args} />;
 
-export const ErrorMessage = Template.bind({});
-ErrorMessage.storyName = 'Submit Button';
-ErrorMessage.args = {
+export const SubmitButton = Template.bind({});
+SubmitButton.storyName = 'Submit Button';
+SubmitButton.args = {
     loading: false,
     buttonText: 'Entrar',
 }
