@@ -3,7 +3,7 @@ import { colors, fonts } from '../../styles';
 import { Link as RouterLink } from 'react-router-dom';
 
 interface ILink {
-    isActive: boolean;
+    $isActive: boolean;
 }
 
 export const Container = styled.div`
@@ -21,9 +21,9 @@ export const Main = styled.div`
 
 export const Link = styled(RouterLink)<ILink>`
     font-weight: ${fonts.semi_bold};
-    color: ${props => (props.isActive ? '#000000' : '#a0a0a0')};
+    color: ${props => (props.$isActive ? '#000000' : '#a0a0a0')};
     padding: 10px;
-    border-bottom: ${props => (props.isActive ? '2px solid #000000' : 'none')};
+    border-bottom: ${props => (props.$isActive ? '2px solid #000000' : 'none')};
     text-decoration: none;
 `;
 
