@@ -1,4 +1,5 @@
 import App from '../src/components/App';
+import { MemoryRouter } from 'react-router-dom';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -13,7 +14,7 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <App>
-      <Story />
+      <MemoryRouter initialEntries={['/']}>{Story()}</MemoryRouter>
     </App>
   ),
 ];
