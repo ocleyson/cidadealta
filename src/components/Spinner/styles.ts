@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { colors } from '../../styles';
-import { Button as SubmitButton } from '../SubmitButton/styles';
+import { Button as PrimaryButton } from '../PrimaryButton/styles';
 
 export const SpinnerContainer = styled.div`
     display: flex;
@@ -33,7 +33,7 @@ export const Spinner = styled.div`
     width: 80px;
     height: 80px;
 
-    ${SubmitButton} & {
+    ${PrimaryButton} & {
         width: 24px;
         height: 24px;
 

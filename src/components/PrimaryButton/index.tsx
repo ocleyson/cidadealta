@@ -4,11 +4,12 @@ import Spinner from '../Spinner';
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     buttonText: string;
     loading: boolean;
+    isDeleteButton?: boolean;
 }
 
-function SubmitButton({ buttonText, loading, ...props }: Props) {
+function SubmitButton({ buttonText, loading, isDeleteButton = false,  ...props }: Props) {
     return (
-        <Button type="submit" {...props}>
+        <Button isDeleteButton={isDeleteButton} {...props}>
             {loading ? <Spinner /> : buttonText}
         </Button>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SubmitButton from '../../components/SubmitButton';
+import SubmitButton from '../../components/PrimaryButton';
 import Error from '../../components/Error';
 import PasswordInput from '../../components/PasswordInput';
 import NameInput from '../../components/NameInput';
@@ -46,7 +46,7 @@ function SignInView({
 
                     {!!error && <Error message={error} />}
 
-                    <SubmitButton buttonText="Entrar" loading={loading} />
+                    <SubmitButton type="submit" buttonText="Entrar" loading={loading} />
                 </form>
             </FormContainer>
         </Container>
