@@ -22,7 +22,7 @@ export function SignInContainer() {
     useEffect(() => {
         const userId = localStorage.getItem('@cidadealta/userId');
 
-        if (userId) navigate('/home');
+        if (userId) navigate('/authenticated/home');
     }, [navigate]);
 
     const handleSubmit = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
@@ -30,13 +30,13 @@ export function SignInContainer() {
 
         setLoading(true);
 
-        const user = apiData.find(user => user.nome === name && user.senha === password);
+        const user = apiData.find(user => user.nome.toLowerCase() === name.toLowerCase().trim() && user.senha.toLowerCase() === password.toLowerCase());
 
         if (!user) {
             setError('Usuário ou senha inválidos');     
         } else {
             localStorage.setItem('@cidadealta/userId', user.id.toString());
-            navigate('/home');
+            navigate('/authenticated/home');
         } 
 
         setLoading(false);

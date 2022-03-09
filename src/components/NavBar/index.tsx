@@ -23,8 +23,8 @@ function NavBar({ signOut }: Props) {
 
             <Spacer axis="vertical" size={10} />
 
-            <Link to="/home" $isActive={location.pathname.includes('home')}>Home</Link>
-            <Link to="/create" $isActive={location.pathname.includes('create')}>Criar Código</Link>
+            <Link to="/authenticated/home" $isActive={location.pathname.includes('home')}>Home</Link>
+            <Link to="/authenticated/create" $isActive={location.pathname.includes('create')}>Criar Código</Link>
         </Container>
     );
 }

@@ -1,13 +1,16 @@
 import NavBar from '../NavBar';
 import { Main } from './styles';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useFetch } from '../../app/reactHooks';
+import { IPenalCode, setPenalCodes } from '../../reducers/penalCode/penalCodeSlice';
+import { useAppDispatch } from '../../app/reduxHooks';
+import Loading from '../../components/Loading';
 
-type Props = {
-    children: JSX.Element
-}
+function AuthenticatedApp() {
+    const { data: apiData, loading: apiLoading } = useFetch<IPenalCode[]>('/codigopenal');
 
-function AuthenticatedApp({ children }: Props) {
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
     const signOut = () => {
@@ -21,11 +24,17 @@ function AuthenticatedApp({ children }: Props) {
         if (!userId) navigate('/');
     }, [navigate])
 
+    useEffect(() => {
+        if (apiData) dispatch(setPenalCodes(apiData));
+    }, [apiData, dispatch]);
+
+    if(apiLoading) return <Loading />
+
     return (
         <>
             <NavBar signOut={signOut} />
             <Main>
-                { children }
+                <Outlet />
             </Main>
         </>
     );
