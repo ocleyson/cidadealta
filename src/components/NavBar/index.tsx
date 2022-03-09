@@ -1,12 +1,16 @@
-import { Button, Container, Logo, Main } from './styles';
+import { Button, Container, Logo, Main, Link } from './styles';
 import PoliceLogo from '../../assets/cidadealta-policelogo.jpg';
 import { FiLogOut } from 'react-icons/fi';
+import Spacer from '../../styles/spacer';
+import { useLocation } from "react-router-dom";
 
 type Props = {
     signOut(): void;
 }
 
 function NavBar({ signOut }: Props) {
+    const location = useLocation();
+
     return (
         <Container>
             <Main>
@@ -16,6 +20,11 @@ function NavBar({ signOut }: Props) {
                     <FiLogOut />
                 </Button>
             </Main>
+
+            <Spacer axis="vertical" size={10} />
+
+            <Link to="/home" isActive={location.pathname.includes('home')}>Home</Link>
+            <Link to="/create" isActive={location.pathname.includes('create')}>Criar Código</Link>
         </Container>
     );
 }
