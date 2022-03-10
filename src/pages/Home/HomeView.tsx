@@ -10,7 +10,7 @@ type Props = {
     status: IPenalCodeStatus[];
 }
 
-function SignInView({
+function HomeView({
     penalCodes, status
 }: Props) {
     return (
@@ -33,4 +33,4 @@ function SignInView({
     );
 }
 
-export default SignInView;
+export default HomeView;
