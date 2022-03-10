@@ -18,7 +18,7 @@ function PenalCodeCard(penalCode: IProps) {
 
                 <Spacer axis='vertical' size={10} />
 
-                <Link to={`/edit/${penalCode.id}`}>
+                <Link to={`/authenticated/edit/${penalCode.id}`}>
                     Editar
                 </Link>
 
@@ -28,7 +28,7 @@ function PenalCodeCard(penalCode: IProps) {
 
                 {' '}
 
-                <Link to={`/about/${penalCode.id}`}>
+                <Link to={`/authenticated/about/${penalCode.id}`}>
                     Saiba Mais
                 </Link>
             </>
