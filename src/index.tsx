@@ -12,6 +12,7 @@ import SignIn from './pages/SignIn';
 import Home from './pages/Home';
 import AuthenticatedApp from './components/AuthenticatedApp';
 import About from './pages/About';
+import Create from './pages/Create';
 
 ReactDOM.render(
   	<React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.render(
                         <Route path="/authenticated" element={<AuthenticatedApp/>}>
                             <Route path="home" element={<Home />} />
                             <Route path="about/:penalCodeId" element={<About />} />
+                            <Route path="create" element={<Create />} />
                         </Route>
                     </Routes>
                 </App>
