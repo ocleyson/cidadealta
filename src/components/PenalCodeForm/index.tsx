@@ -9,7 +9,7 @@ import * as Interface from '../../interfaces';
 type Props = {
     penalCode: Interface.IPenalCodeForm;
     handleSubmit: (event: React.FormEvent<HTMLFormElement>, penalCode: Interface.IPenalCodeForm) => void;
-    handleDelete?: (id: string) => void;
+    handleDelete?: (id: number) => void;
     handleChange: (value: string | number, key: keyof Omit<IPenalCode, 'id'>) => void;
     status: Interface.IPenalCodeStatus[];
 }
@@ -105,8 +105,10 @@ function PenalCodeForm({ penalCode, handleChange, handleSubmit, handleDelete, st
 
             <PrimaryButton type='submit' buttonText='Salvar' loading={false} />
 
+            <Spacer axis="vertical" size={10} />
+
             {handleDelete && (
-                <PrimaryButton type='button' buttonText='Deletar' loading={false} />
+                <PrimaryButton type='button' buttonText='Deletar' loading={false} onClick={() => handleDelete(penalCode?.id || 0 )} isDeleteButton />
             ) }
 
         </form>
