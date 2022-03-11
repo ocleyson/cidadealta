@@ -1,4 +1,3 @@
-import { IPenalCode } from '../../reducers/penalCode/penalCodeSlice';
 import InputLabel from '../InputLabel';
 import Input from '../Input';
 import NameInput from '../NameInput';
@@ -10,7 +9,7 @@ type Props = {
     penalCode: Interface.IPenalCodeForm;
     handleSubmit: (event: React.FormEvent<HTMLFormElement>, penalCode: Interface.IPenalCodeForm) => void;
     handleDelete?: (id: number) => void;
-    handleChange: (value: string | number, key: keyof Omit<IPenalCode, 'id'>) => void;
+    handleChange: (value: string | number, key: keyof Omit<Interface.IPenalCode, 'id'>) => void;
     status: Interface.IPenalCodeStatus[];
 }
 

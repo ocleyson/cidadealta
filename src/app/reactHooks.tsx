@@ -1,6 +1,8 @@
 import { useEffect, useState, useCallback } from 'react';
-import api from './api';
+
 import axios from 'axios';
+
+import api from './api';
 
 interface IUseFetchState<T> {
     data: T;

@@ -1,30 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/reduxStore';
-
-export interface IPenalCode {
-    id: number,
-    nome: string,
-    descricao: string,
-    dataCriacao: string,
-    multa: number,
-    tempoPrisao: number,
-    status: number
-}
+import * as Interface from '../../interfaces';
 
 export const penalCodeSlice = createSlice({
     name: 'penalCode',
-    initialState: [] as IPenalCode[],
+    initialState: [] as Interface.IPenalCode[],
     reducers: {
-        setPenalCodes: (state, action: PayloadAction<IPenalCode[]>) => {
+        setPenalCodes: (state, action: PayloadAction<Interface.IPenalCode[]>) => {
             return action.payload;
         },
-        addPenalCode: (state, action: PayloadAction<IPenalCode>) => {
+        addPenalCode: (state, action: PayloadAction<Interface.IPenalCode>) => {
             return [...state, action.payload];
         },
         deletePenalCode: (state, action: PayloadAction<number>) => {
             return state.filter(penalCode => penalCode.id !== action.payload);
         },
-        updatePenalCode: (state, action: PayloadAction<IPenalCode>) => {
+        updatePenalCode: (state, action: PayloadAction<Interface.IPenalCode>) => {
             return state.map(penalCode => {
                 if (penalCode.id === action.payload.id) {
                     return action.payload;

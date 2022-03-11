@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FiXCircle } from 'react-icons/fi';
+
 import { colors } from '../../styles';
 
 export const Container = styled.div`

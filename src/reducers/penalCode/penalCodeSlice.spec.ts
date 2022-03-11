@@ -1,7 +1,8 @@
 import faker from '@faker-js/faker';
 
+import * as Interface from '../../interfaces';
+
 import penalCodeReducer, {
-    IPenalCode,
     addPenalCode,
     deletePenalCode,
     orderPenalCodesByStatus,
@@ -10,7 +11,7 @@ import penalCodeReducer, {
   } from './penalCodeSlice';
   
   describe('penal code reducer', () => {
-    const initialState: IPenalCode[] = [
+    const initialState: Interface.IPenalCode[] = [
         {
             id: 1,
             nome: faker.datatype.string(),
@@ -32,7 +33,7 @@ import penalCodeReducer, {
     ];
   
     it('should add penal code', () => {
-        const penalCodeData: IPenalCode = {
+        const penalCodeData: Interface.IPenalCode = {
             id: faker.datatype.number(),
             nome: faker.datatype.string(),
             descricao: faker.datatype.string(),
@@ -66,7 +67,7 @@ import penalCodeReducer, {
     });
 
     it('should update penal code', () => {
-        const penalCodeData: IPenalCode = {
+        const penalCodeData: Interface.IPenalCode = {
             id: 1,
             nome: faker.datatype.string(),
             descricao: faker.datatype.string(),

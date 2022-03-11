@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import penalCodeReducer from '../reducers/penalCode/penalCodeSlice';
 
 export const store = configureStore({

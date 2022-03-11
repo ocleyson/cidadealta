@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { colors, fonts } from '../../styles';
 import { Link as RouterLink } from 'react-router-dom';
+
+import { colors, fonts } from '../../styles';
 
 interface ILink {
     $isActive: boolean;

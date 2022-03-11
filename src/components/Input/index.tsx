@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Input as StyledInput } from './styles';
 
 function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {

@@ -1,8 +1,9 @@
+import { FiLogOut } from 'react-icons/fi';
+import { useLocation } from "react-router-dom";
+
 import { Button, Container, Logo, Main, Link } from './styles';
 import PoliceLogo from '../../assets/cidadealta-policelogo.jpg';
-import { FiLogOut } from 'react-icons/fi';
 import Spacer from '../../styles/spacer';
-import { useLocation } from "react-router-dom";
 
 type Props = {
     signOut(): void;

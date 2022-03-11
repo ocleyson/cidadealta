@@ -1,14 +1,17 @@
+import { useEffect } from 'react';
+
+import { useNavigate, Outlet } from 'react-router-dom';
+
 import NavBar from '../NavBar';
 import { Main } from './styles';
-import { useNavigate, Outlet } from 'react-router-dom';
-import { useEffect } from 'react';
 import { useFetch } from '../../app/reactHooks';
-import { IPenalCode, setPenalCodes } from '../../reducers/penalCode/penalCodeSlice';
+import { setPenalCodes } from '../../reducers/penalCode/penalCodeSlice';
 import { useAppDispatch } from '../../app/reduxHooks';
 import Loading from '../../components/Loading';
+import * as Interface  from '../../interfaces';
 
 function AuthenticatedApp() {
-    const { data: apiData, loading: apiLoading } = useFetch<IPenalCode[]>('/codigopenal');
+    const { data: apiData, loading: apiLoading } = useFetch<Interface.IPenalCode[]>('/codigopenal');
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();

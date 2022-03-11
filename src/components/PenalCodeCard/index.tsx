@@ -1,9 +1,9 @@
 import ContentContainer from '../ContentContainer';
-import { IPenalCode } from '../../reducers/penalCode/penalCodeSlice';
 import Spacer from '../../styles/spacer';
 import { Link } from './styles';
+import * as Interface from '../../interfaces';
 
-interface IProps extends Omit<IPenalCode, 'status'> {
+interface IProps extends Omit<Interface.IPenalCode, 'status'> {
     status: string;
 }
 

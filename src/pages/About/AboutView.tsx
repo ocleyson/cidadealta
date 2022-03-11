@@ -1,11 +1,10 @@
-import { IPenalCode } from '../../reducers/penalCode/penalCodeSlice';
 import ContentContainer from '../../components/ContentContainer';
 import Spacer from '../../styles/spacer';
-import { IPenalCodeStatus } from './AboutContainer';
+import * as Interface from '../../interfaces';
 
 type Props = {
-    penalCode: IPenalCode | undefined;
-    status: IPenalCodeStatus[];
+    penalCode: Interface.IPenalCode | undefined;
+    status: Interface.IPenalCodeStatus[];
 }
 
 function AboutView({

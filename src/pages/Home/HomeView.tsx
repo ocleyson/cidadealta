@@ -1,13 +1,10 @@
-import React from 'react';
-
-import { IPenalCode } from '../../reducers/penalCode/penalCodeSlice';
-import { IPenalCodeStatus } from './HomeContainer';
 import PenalCodeCard from '../../components/PenalCodeCard';
 import Spacer from '../../styles/spacer';
+import * as Interface from '../../interfaces';
 
 type Props = {
-    penalCodes: IPenalCode[];
-    status: IPenalCodeStatus[];
+    penalCodes: Interface.IPenalCode[];
+    status: Interface.IPenalCodeStatus[];
 }
 
 function HomeView({

@@ -1,16 +1,17 @@
-import PenalCodeForm from '../../components/PenalCodeForm';
-import { IPenalCode, getPenalCodes, updatePenalCode, deletePenalCode } from '../../reducers/penalCode/penalCodeSlice';
-import { useAppDispatch, useAppSelector } from '../../app/reduxHooks';
 import { useEffect, useState } from 'react';
+
+import { useParams, useNavigate } from 'react-router-dom';
+
+import PenalCodeForm from '../../components/PenalCodeForm';
+import { getPenalCodes, updatePenalCode, deletePenalCode } from '../../reducers/penalCode/penalCodeSlice';
+import { useAppDispatch, useAppSelector } from '../../app/reduxHooks';
 import { useFetch } from '../../app/reactHooks';
-import { useNavigate } from 'react-router-dom';
 import ContentContainer from '../../components/ContentContainer';
 import Loading from '../../components/Loading';
 import * as Interface from '../../interfaces';
-import { useParams } from 'react-router-dom';
 
 function Update() {
-    const [newPenalCode, setNewPenalCode] = useState<IPenalCode>({
+    const [newPenalCode, setNewPenalCode] = useState<Interface.IPenalCode>({
         id: 0,
         nome: '',
         descricao: '',
@@ -51,7 +52,7 @@ function Update() {
         navigate('/authenticated/home');
     }
 
-    const handleChange = (value: string | number, key: keyof Omit<IPenalCode, 'id'>) => {
+    const handleChange = (value: string | number, key: keyof Omit<Interface.IPenalCode, 'id'>) => {
         setNewPenalCode({ ...newPenalCode, [key]: value });
     }
 

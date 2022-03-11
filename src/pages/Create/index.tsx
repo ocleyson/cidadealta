@@ -1,15 +1,17 @@
-import PenalCodeForm from '../../components/PenalCodeForm';
-import { addPenalCode, IPenalCode } from '../../reducers/penalCode/penalCodeSlice';
-import { useAppDispatch } from '../../app/reduxHooks';
 import { useState } from 'react';
-import { useFetch } from '../../app/reactHooks';
+
 import { useNavigate } from 'react-router-dom';
+
+import PenalCodeForm from '../../components/PenalCodeForm';
+import { addPenalCode } from '../../reducers/penalCode/penalCodeSlice';
+import { useAppDispatch } from '../../app/reduxHooks';
+import { useFetch } from '../../app/reactHooks';
 import ContentContainer from '../../components/ContentContainer';
 import Loading from '../../components/Loading';
 import * as Interface from '../../interfaces';
 
 function Create() {
-    const [newPenalCode, setNewPenalCode] = useState<Omit<IPenalCode, 'id' | 'dataCriacao'>>({
+    const [newPenalCode, setNewPenalCode] = useState<Omit<Interface.IPenalCode, 'id' | 'dataCriacao'>>({
         nome: '',
         descricao: '',
         status: 1,
@@ -32,7 +34,7 @@ function Create() {
         navigate('/authenticated/home');
     }
 
-    const handleChange = (value: string | number, key: keyof Omit<IPenalCode, 'id'>) => {
+    const handleChange = (value: string | number, key: keyof Omit<Interface.IPenalCode, 'id'>) => {
         setNewPenalCode({ ...newPenalCode, [key]: value });
     }
 
