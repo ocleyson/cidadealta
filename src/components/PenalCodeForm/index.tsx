@@ -107,7 +107,7 @@ function PenalCodeForm({ penalCode, handleChange, handleSubmit, handleDelete, st
             <Spacer axis="vertical" size={10} />
 
             {handleDelete && (
-                <PrimaryButton type='button' buttonText='Deletar' loading={false} onClick={() => handleDelete(penalCode?.id || 0 )} isDeleteButton />
+                <PrimaryButton type='button' buttonText='Deletar' loading={false} onClick={() => { window.confirm('Tem certeza que deseja excluir esse código penal?') && handleDelete(penalCode?.id || 0 ) }} isDeleteButton />
             ) }
 
         </form>
