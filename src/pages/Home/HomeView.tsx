@@ -1,41 +1,70 @@
+import React from 'react';
+
 import PenalCodeCard from '../../components/PenalCodeCard';
 import Spacer from '../../styles/spacer';
 import * as Interface from '../../interfaces';
 import ContentContainer from '../../components/ContentContainer';
 import InputLabel from '../../components/InputLabel';
+import Input from '../../components/Input';
 
 type Props = {
     penalCodes: Interface.IPenalCode[];
     status: Interface.IPenalCodeStatus[];
     handleStatusChange: (selectedStatus: number) => void;
     statusId: number;
+    searchName: string;
+    setSearchName: React.Dispatch<React.SetStateAction<string>>;
 }
 
 function HomeView({
-    penalCodes, status, handleStatusChange, statusId
+    penalCodes, status, handleStatusChange, statusId, searchName, setSearchName
 }: Props) {
     return (
         <>
             <ContentContainer>
-                <InputLabel labelId="status">
-                    <>
-                        Ordenar por Status
+                <>
+                    <InputLabel labelId="name">
+                        <>
+                            Pesquisar por Nome
 
-                        <Spacer axis="vertical" size={1} />
+                            <Input
+                                type="text"
+                                id="name"
+                                name="name"
+                                autoComplete="off"
+                                placeholder='Digite o nome do código penal'
+                                value={searchName}
+                                onChange={(e) => setSearchName(e.target.value)}
+                            />
+                        </>
+                    </InputLabel>
 
-                        <select
-                            id="status"
-                            name="status"
-                            value={statusId}
-                            onChange={(e) => handleStatusChange(parseInt(e.target.value))}
-                        >
-                            {status.map(({ id, descricao }) => (
-                                <option key={id} value={id}>{descricao}</option>
-                            ))}
-                        </select>
-                    </>
-            </InputLabel>
+                    <Spacer axis='vertical' size={10} />
+
+                    <InputLabel labelId="status">
+                        <>
+                            Ordenar por Status
+
+                            <Spacer axis="vertical" size={1} />
+
+                            <select
+                                id="status"
+                                name="status"
+                                value={statusId}
+                                onChange={(e) => handleStatusChange(parseInt(e.target.value))}
+                            >
+                                {status.map(({ id, descricao }) => (
+                                    <option key={id} value={id}>{descricao}</option>
+                                ))}
+                            </select>
+                        </>
+                    </InputLabel>
+                </>
             </ContentContainer>
+
+            <Spacer axis='vertical' size={10} />
+
+            <h2>Códigos Penais</h2>
 
             <Spacer axis='vertical' size={10} />
 

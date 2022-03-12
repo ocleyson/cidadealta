@@ -37,3 +37,21 @@ export function useFetch<T = unknown>(url: string): IUseFetchState<T> {
         errorMessage,
     };
 }
+
+export function useDebounce(value: string, delay: number): string {
+
+    const [debouncedValue, setDebouncedValue] = useState(value);
+
+    useEffect(
+      () => {
+        const handler = setTimeout(() => {
+          setDebouncedValue(value);
+        }, delay);
+        return () => {
+          clearTimeout(handler);
+        };
+      },
+      [value, delay]
+    );
+    return debouncedValue;
+  }
