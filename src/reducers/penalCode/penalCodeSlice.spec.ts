@@ -5,7 +5,6 @@ import * as Interface from '../../interfaces';
 import penalCodeReducer, {
     addPenalCode,
     deletePenalCode,
-    orderPenalCodesByStatus,
     updatePenalCode,
     setPenalCodes,
   } from './penalCodeSlice';
@@ -54,16 +53,6 @@ import penalCodeReducer, {
         const data = penalCodeReducer(initialState, deletePenalCode(penalCodeId));
 
         expect(data).toEqual(expect.arrayContaining([]));
-    });
-    
-    it('should order penal codes by status', () => {
-        const penalCodeStatus: number = 1;
-
-        const data = penalCodeReducer(initialState, orderPenalCodesByStatus(penalCodeStatus));
-
-        expect(data[0]).toEqual(expect.objectContaining({
-            status: penalCodeStatus
-        }));
     });
 
     it('should update penal code', () => {

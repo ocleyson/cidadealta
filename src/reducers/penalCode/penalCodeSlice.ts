@@ -23,18 +23,10 @@ export const penalCodeSlice = createSlice({
                 return penalCode;
             });
         },
-        orderPenalCodesByStatus: (state, action: PayloadAction<number>) => {
-            return state.sort((a, b) => {
-                if (a.status === action.payload) {
-                    return -1;
-                }
-                return 0;
-            });
-        }
     },
 });
 
-export const { setPenalCodes, addPenalCode, deletePenalCode, orderPenalCodesByStatus, updatePenalCode } = penalCodeSlice.actions;
+export const { setPenalCodes, addPenalCode, deletePenalCode, updatePenalCode } = penalCodeSlice.actions;
 
 export const getPenalCodes = (state: RootState) => state.penalCode;
 
